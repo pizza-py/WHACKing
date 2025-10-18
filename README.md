@@ -1,38 +1,32 @@
+# Budgetopolis 🏙️  
+**Your wallet builds your world.**
 
-# BloomBank 🌱  
-**Grow good habits. Watch your finances flourish.**
-
-BloomBank turns personal finance into a living, growing experience. Every smart decision plants seeds that grow into a digital garden - a visual reflection of your financial wellbeing.
+Budgetopolis turns your spending habits into a living city. Save smart, and your streets thrive. Overspend, and your town drowns in fast food joints and debt collectors.
 
 ---
 
 ## 📖 Overview
-Managing money shouldn't feel like punishment. BloomBank rewards healthy financial habits with visual growth: trees, plants, and habitats that evolve as you spend responsibly and save consistently.  
-The goal is simple: make financial literacy *visible, calming, and rewarding.*
+Budgetopolis gamifies financial awareness through a visual metaphor: your spending literally shapes your city. Each spending category builds structures — groceries spawn markets, entertainment adds cinemas, hygiene cleans graffiti, and rent keeps your “home” unlocked.
 
 ---
 
-## 💡 Inspiration
-Apps like *Flora* and *Forest* make productivity feel rewarding. We thought "what if budgeting felt the same way?"  
-Instead of guilt-tripping people with charts, BloomBank gives emotional reinforcement for good money choices.
+## 💡 Concept
+Most finance tools guilt-trip users. Budgetopolis shows, not tells. You don’t see a pie chart — you see your city becoming what you buy. Every check-in reflects real choices, making money management tangible.
 
 ---
 
-## 🌿 Core Features
-- **Grow your garden:** Save money, hit goals, and watch your world bloom.  
-- **Habit tracking:** Automatically turns actions (like meeting a savings goal or skipping impulse buys) into growth points.  
-- **Mood-linked spending:** Reflect your emotions in the environment, like overspending triggers “wilting” visuals.  
-- **Plain English summaries:** “You saved £50 this week - that’s one new oak tree!”  
-- **Community forest (optional):** Connect with friends and grow a shared ecosystem of healthy habits.
+## 🏗️ Core Features
+- **Category-driven building:** Fast food = more restaurants, savings = parks, rent = housing stability.  
+- **Dynamic city state:** Overspending creates decay, neglect adds graffiti, balance restores order.  
+- **Personal room:** A customizable apartment tied to your habits — miss rent, lose access.  
+- **Daily check-ins:** Quick “spending reflection” to update your city’s state.  
 
 ---
 
 ## 🧠 How It Works
-1. **Data Input:** Users import demo data or connect a bank sandbox (like Plaid).  
-2. **Analysis:** Python backend categorizes spending and calculates “health scores.”  
-3. **Growth Engine:** Each score increment generates plant growth animations using procedural generation.  
-4. **Frontend Visualization:** React + Canvas/WebGL render the live garden scene.  
-
+1. User logs daily or weekly spending categories manually (demo) or via mock data.  
+2. The app converts spending ratios into city-building events.  
+3. The frontend animates changes — new buildings, cleaned walls, or urban decay
 ---
 
 ## 🛠️ Tech Stack
