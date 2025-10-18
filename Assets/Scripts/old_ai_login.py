@@ -72,4 +72,4 @@ if __name__ == "__main__":
 
     curr.close()
     conn.close()
-    sys.exit(0) # Exit successfully
+    sys.exit(0) # Exit successfully'''
