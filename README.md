@@ -47,3 +47,4 @@ cd bloombank
 pip install -r requirements.txt
 npm install
 npm run dev
+Testing authentication push
