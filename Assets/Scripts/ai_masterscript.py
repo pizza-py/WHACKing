@@ -163,6 +163,9 @@ if __name__ == "__main__":
             otp_code = send_password(target_email)
             print(f"EMAIL SUCCESS: OTP email sent to {target_email}.")
             print(f"DEBUG: Generated OTP was: {otp_code}")
+            #write the otp to otp.txt
+            with open("otp.txt", "w") as otp_file:
+                otp_file.write(str(otp_code))
         except smtplib.SMTPAuthenticationError:
             print("EMAIL FAIL: Authentication error. Check SENDER email and APP PASSWORD.")
         except Exception as e:

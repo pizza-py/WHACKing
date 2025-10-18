@@ -16,7 +16,7 @@ public class LoginManager : MonoBehaviour
     // The path to your Python executable (e.g., python.exe or python)
     private const string PythonPath = "python"; 
     // The name of the Python script file
-    private const string ScriptFileName = "ai_login.py";
+    private const string ScriptFileName = "ai_masterscript.py";
 
     void Start()
     {

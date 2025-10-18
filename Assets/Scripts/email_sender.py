@@ -13,7 +13,7 @@ def send_password( recipient_email):
     # 1. Create the HTML content
     html_content = f"""
     <html>
-        <body>
+z        <body>
             <div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
                 <h2 style="color: #1a73e8;">Your One-Time Password (OTP)</h2>
                 <p>Hello,</p>
@@ -54,7 +54,7 @@ def send_password( recipient_email):
 
 
 # Example usage (if you want to test it):
-send_password( 'your_email')
+send_password( email_cs)#this should be inputted from 
 
 
 
