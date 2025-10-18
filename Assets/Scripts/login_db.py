@@ -1,5 +1,6 @@
 from sqlcipher3 import dbapi2 as sqlcipher
 import os  # Needed to access environment variables
+import random
 
 # --- CONFIG ---
 # WARNING: For the hackathon, we are hardcoding a consistent key for stability.
@@ -38,8 +39,9 @@ def check_email(email):
 
 
 # function which adds new
-def insert_email(email, username):
+def insert_email(email):
     try:
+        username = f"u{random.randint(100000000,999999999)}"
         # FIX: Ensure we insert ONLY the two columns: email and username
         cursor.execute(
             'INSERT INTO users (email, username) VALUES (?, ?)',
