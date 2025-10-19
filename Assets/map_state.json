@@ -1,5 +1,8 @@
 {
-    "house_placed": false,
-    "house_location": [],
+    "house_placed": true,
+    "house_location": [
+        14,
+        6
+    ],
     "buildings_placed": true
 }
