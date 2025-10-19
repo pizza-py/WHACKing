@@ -6,6 +6,11 @@ import ssl
 from email.message import EmailMessage
 from email.mime.text import MIMEText
 from cryptography.fernet import Fernet
+import os
+import shutil
+import json
+
+
 
 # --- CONFIGURATION & SECRETS ---
 
@@ -57,6 +62,52 @@ def setup_table(cursor):
         username BLOB NOT NULL
     )
     ''')
+
+#
+
+def create_json_files(email):
+    # Sanitize email to create a valid filename
+    safe_email = email.replace('@', '_at_').replace('.', '_')
+
+    # Get the script's directory (WHACKing/assets/script)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Navigate to WHACKing directory (two levels up)
+    whacking_dir = os.path.join(script_dir, '..', '..')
+
+    # Define file paths
+    template_file = os.path.join(whacking_dir, 'map_state.json')
+    user_file = os.path.join(whacking_dir, f'map_state_{safe_email}.json')
+
+    # Check if user-specific file already exists
+    if not os.path.exists(user_file):
+        # Check if template file exists
+        if os.path.exists(template_file):
+            # Copy the template to create user-specific file
+            shutil.copy(template_file, user_file)
+        else:
+            # If template doesn't exist, create a default empty structure
+            default_data = {
+                "map_data": [
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                ],
+                "house_placed": False,
+                "house_location": None,
+                "buildings_placed": False,
+                "building_locations": []
+            }
+            with open(user_file, 'w') as f:
+                json.dump(default_data, f, indent=4)
+
 
 
 def insert_email(connection, cursor, email):
@@ -157,6 +208,9 @@ if __name__ == "__main__":
     # 1. Attempt to insert the user
     if insert_email(conn, curr, target_email):
         print(f"\nINFO: User created successfully. Sending OTP to {target_email}...")
+
+        # Create JSON files for the new user
+        create_json_files(target_email)
 
         # 2. Send the OTP
         try:
