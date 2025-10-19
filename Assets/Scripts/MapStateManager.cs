@@ -25,7 +25,7 @@ public class GameState
 public class MapStateManager : MonoBehaviour
 {
     // Configuration
-    private const int MAP_SIZE = 10;
+    private const int MAP_SIZE = 20;
     private const string FILE_NAME = "map_state.json";
     private const string EMPTY = "0";
     private const string ROAD = "1";
@@ -107,13 +107,20 @@ public class MapStateManager : MonoBehaviour
 
     public void RenderMap(GameState state)
     {
-        float cellSize = 1.0f; // Adjust to spacing
+        float cellSize = 1.0f;
         for (int row = 0; row < MAP_SIZE; row++)
         {
             for (int col = 0; col < MAP_SIZE; col++)
             {
                 string cell = state.map_data[row][col];
-                Vector3 position = new Vector3(col * cellSize, -row * cellSize, 0);
+                float offsetX = -(MAP_SIZE * cellSize) / 2f;
+                float offsetY = (MAP_SIZE * cellSize) / 2f;
+
+                Vector3 position = new Vector3(
+                    offsetX + col * cellSize + cellSize / 2f,
+                    offsetY - row * cellSize - cellSize / 2f,
+                    0
+                );
                 GameObject prefab = null;
 
                 switch (cell)
@@ -146,9 +153,12 @@ public class MapStateManager : MonoBehaviour
         int col = UnityEngine.Random.Range(0, MAP_SIZE);
 
         // Update the map and state variables
-        state.map_data[row][col] = HOUSE;
-        state.house_placed = true;
-        state.house_location = new List<int> { row, col };
+        if (state.map_data[row][col] == EMPTY)
+        {
+            state.map_data[row][col] = HOUSE;
+            state.house_placed = true;
+            state.house_location = new List<int> { row, col };
+        }
 
         Debug.Log($"House randomly placed at Row: {row}, Col: {col}");
         return state;
@@ -191,7 +201,7 @@ public class MapStateManager : MonoBehaviour
         GameState gameState = LoadGameState();
 
         // 2. Place rows of roads
-        for (int i = 0; i < MAP_SIZE; i += 2)
+        for (int i = 1; i < MAP_SIZE; i += 2)
         {
             for (int j = 0; j < MAP_SIZE; j++)
             {
@@ -205,6 +215,23 @@ public class MapStateManager : MonoBehaviour
         // 4. INITIAL BUILDING PLACEMENT: Uncomment this if you need to add a new building
         foreach (string buildingType in ALL_BUILDING_TYPES)
         {
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
+            AddBuilding(buildingType, gameState);
             AddBuilding(buildingType, gameState);
         }
 
