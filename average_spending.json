@@ -1,0 +1,77 @@
+[
+  {
+    "date": "2025-10-15",
+    "category": "N",
+    "amount": 192.6
+  },
+  {
+    "date": "2025-10-18",
+    "category": "EO",
+    "amount": 16.08
+  },
+  {
+    "date": "2025-10-17",
+    "category": "N",
+    "amount": 206.6
+  },
+  {
+    "date": "2025-10-19",
+    "category": "N",
+    "amount": 171.56
+  },
+  {
+    "date": "2025-10-16",
+    "category": "S",
+    "amount": 128.16
+  },
+  {
+    "date": "2025-10-16",
+    "category": "S",
+    "amount": 106.85
+  },
+  {
+    "date": "2025-10-15",
+    "category": "N",
+    "amount": 179.3
+  },
+  {
+    "date": "2025-10-14",
+    "category": "EO",
+    "amount": 30.76
+  },
+  {
+    "date": "2025-10-15",
+    "category": "EO",
+    "amount": 30.09
+  },
+  {
+    "date": "2025-10-19",
+    "category": "G",
+    "amount": 50.15
+  },
+  {
+    "date": "2025-10-19",
+    "category": "OS",
+    "amount": 87.13
+  },
+  {
+    "date": "2025-10-13",
+    "category": "EO",
+    "amount": 23.56
+  },
+  {
+    "date": "2025-10-13",
+    "category": "EO",
+    "amount": 28.08
+  },
+  {
+    "date": "2025-10-15",
+    "category": "S",
+    "amount": 65.92
+  },
+  {
+    "date": "2025-10-17",
+    "category": "OS",
+    "amount": 118.73
+  }
+]

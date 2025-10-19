@@ -2,9 +2,10 @@ import smtplib
 import ssl
 from email.message import EmailMessage
 from email.mime.text import MIMEText  # You'll need this for HTML
+import random
 
-
-def send_password(otp, recipient_email):
+def send_password( recipient_email):
+    otp = random.randint(100000,999999)
     # Your credentials
     email_sender = 'smtp41290@gmail.com'
     email_app_password = 'tmtq ukqn dsdr ozro'
@@ -12,7 +13,7 @@ def send_password(otp, recipient_email):
     # 1. Create the HTML content
     html_content = f"""
     <html>
-        <body>
+z        <body>
             <div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
                 <h2 style="color: #1a73e8;">Your One-Time Password (OTP)</h2>
                 <p>Hello,</p>
@@ -49,6 +50,11 @@ def send_password(otp, recipient_email):
     # Send the email and close the connection
     smtp_server.sendmail(email_sender, recipient_email, email.as_string())
     smtp_server.quit()
+    return otp #this returns the otp to the c# program
+
 
 # Example usage (if you want to test it):
-send_password(123456, 'your_email')
+send_password( email_cs)#this should be inputted from 
+
+
+
